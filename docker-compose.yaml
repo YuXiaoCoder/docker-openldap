@@ -8,6 +8,7 @@ services:
   openldap:
     image: docker-openldap:latest
     container_name: openldap
+    restart: always
     privileged: true
     environment:
       SUFFIX: 'dc=xiaocoder,dc=com'
