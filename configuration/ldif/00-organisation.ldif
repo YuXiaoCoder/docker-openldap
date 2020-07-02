@@ -1,0 +1,21 @@
+dn: %SUFFIX%
+changetype: add
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: %ORGANISATION_NAME%
+
+dn: ou=Groups,%SUFFIX%
+changetype: add
+objectClass: organizationalUnit
+ou: Group
+
+dn: ou=Users,%SUFFIX%
+changetype: add
+objectClass: organizationalUnit
+ou: Users
+
+dn: cn=Manager,%SUFFIX%
+changetype: add
+objectClass: organizationalRole
+cn: Manager

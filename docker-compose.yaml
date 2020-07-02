@@ -1,0 +1,21 @@
+version: '2'
+
+networks:
+  openldap:
+    driver: bridge
+
+services:
+  openldap:
+    image: docker-openldap:latest
+    container_name: openldap
+    privileged: true
+    environment:
+      SUFFIX: 'dc=xiaocoder,dc=com'
+      ROOT_PW: 'Xiao@2020#'
+      ORGANISATION_NAME: 'XiaoCoder'
+    ports:
+      - 389:389
+    volumes:
+      - /data/openldap/:/data
+    networks:
+      - openldap
